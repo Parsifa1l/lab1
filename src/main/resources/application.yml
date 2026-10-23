@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: "1БКС24068"
+  config:
+    # Подгружает секреты из файла .env в корне проекта (в git он не попадает)
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none   # структуру БД создаём SQL-скриптами из папки db/, приложение её не меняет
+    open-in-view: true
